@@ -24,6 +24,16 @@
                     "physics",
                     "mod 1"
                   ]
+                },
+                {
+                  "title": "Chapter1",
+                  "description": "Includes chapter 1 theory",
+                  "path": "/data/notes/semester-1/physics/physics/microcontroller_module_1___printed_notes__pdf_.pdf",
+                  "type": "pdf",
+                  "size": "620KB",
+                  "uploadDate": "2025-11-06",
+                  "downloadUrl": "/api/download?path=/data/notes/semester-1/physics/physics/microcontroller_module_1___printed_notes__pdf_.pdf",
+                  "thumbnailUrl": "/api/thumbnail?path=data/notes\\semester-1\\physics\\physics\\microcontroller_module_1___printed_notes__pdf_.pdf&format=png"
                 }
               ]
             },
@@ -78,7 +88,18 @@
             {
               "id": "cse202",
               "name": "Object-Oriented Programming",
-              "materials": []
+              "materials": [
+                {
+                  "title": "OOP in C++",
+                  "description": "C++",
+                  "path": "/data/notes/semester-2/cse/object-oriented-programming/Object_Oriented_Programming_in_C.pdf",
+                  "type": "pdf",
+                  "size": "11783KB",
+                  "uploadDate": "2025-11-07",
+                  "downloadUrl": "/api/download?path=/data/notes/semester-2/cse/object-oriented-programming/Object_Oriented_Programming_in_C.pdf",
+                  "thumbnailUrl": "/api/thumbnail?path=data/notes\\semester-2\\cse\\object-oriented-programming\\Object_Oriented_Programming_in_C.pdf&format=png"
+                }
+              ]
             }
           ]
         }
@@ -1162,6 +1183,16 @@
                     "dbms",
                     "mod 5"
                   ]
+                },
+                {
+                  "title": "Chapter1",
+                  "description": "Introduction to rdbms",
+                  "path": "/data/notes/semester-4/cse/dbms/Final_SC_research_paper_11-report-smgcsx49.pdf",
+                  "type": "pdf",
+                  "size": "854KB",
+                  "uploadDate": "2025-11-07",
+                  "downloadUrl": "/api/download?path=/data/notes/semester-4/cse/dbms/Final_SC_research_paper_11-report-smgcsx49.pdf",
+                  "thumbnailUrl": "/api/thumbnail?path=data/notes\\semester-4\\cse\\dbms\\Final_SC_research_paper_11-report-smgcsx49.pdf&format=png"
                 }
               ]
             }

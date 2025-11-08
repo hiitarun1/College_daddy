@@ -450,7 +450,11 @@ input[type="checkbox"]:checked::after {
 
 /*** Footer Section - FIXED ***/
 .footer {
-    background-color: var(--bg-darker);
+    background-color:var(--bg-darker);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     color: var(--text-gray);
     border-top: 2px solid var(--primary-color);
     padding: 40px 20px 20px;
