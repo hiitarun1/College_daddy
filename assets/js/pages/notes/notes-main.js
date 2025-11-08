@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
         await loadData();
         displaySemesters();
+        updateBreadcrumb();
     } catch (error) {
         showError('Failed to load data');
     }
@@ -10,7 +11,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 async function loadData() {
     try {
-        const response = await fetch('/data/notes-data.json');
+        const response = await fetch('../data/notes-data.json');
         if (!response.ok) throw new Error('Failed to load data');
         window.notesData = await response.json();
     } catch (error) {
