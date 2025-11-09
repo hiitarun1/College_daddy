@@ -6,6 +6,9 @@ from werkzeug.utils import secure_filename
 from datetime import datetime
 from utils.thumbnail_generator import ThumbnailGenerator
 import logging
+import subprocess
+import threading
+import atexit
 
 app = Flask(__name__, static_folder='assets', template_folder='pages')
 CORS(app)
@@ -16,6 +19,32 @@ NOTES_JSON = 'data/notes-data.json'
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+# Global variable to store watcher process
+watcher_process = None
+
+def start_file_watcher():
+    """Start the file watcher in a separate process"""
+    global watcher_process
+    try:
+        watcher_script = os.path.join('scripts', 'auto-update-watcher.js')
+        watcher_process = subprocess.Popen(['node', watcher_script], 
+                                         stdout=subprocess.PIPE, 
+                                         stderr=subprocess.PIPE)
+        logger.info("File watcher started successfully")
+    except Exception as e:
+        logger.error(f"Failed to start file watcher: {str(e)}")
+
+def stop_file_watcher():
+    """Stop the file watcher process"""
+    global watcher_process
+    if watcher_process:
+        watcher_process.terminate()
+        watcher_process.wait()
+        logger.info("File watcher stopped")
+
+# Register cleanup function
+atexit.register(stop_file_watcher)
 
 @app.route('/')
 def home():
@@ -212,4 +241,12 @@ def serve_data(filename):
     return send_from_directory('data', filename)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Start file watcher
+    start_file_watcher()
+    
+    try:
+        app.run(debug=True)
+    except KeyboardInterrupt:
+        logger.info("Shutting down...")
+    finally:
+        stop_file_watcher()

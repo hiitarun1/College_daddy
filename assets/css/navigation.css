@@ -15,6 +15,16 @@
     --border-radius: 8px;
 }
 
+/* Light theme variables */
+[data-theme="light"] {
+    --dark-bg: #ffffff;
+    --darker-bg: #f5f5f5;
+    --border-color: #e0e0e0;
+    --text-color: #333333;
+    --text-muted: #666666;
+    --text-bright: #000000;
+}
+
 /* Header and Navigation Container */
 body > header {
     background-color: var(--darker-bg) !important;
@@ -24,6 +34,11 @@ body > header {
     z-index: 1000 !important;
     border-bottom: 1px solid var(--border-color) !important;
     width: 100% !important;
+    transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease, border-color var(--transition-speed) ease;
+}
+
+[data-theme="light"] body > header {
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1) !important;
 }
 
 body > header .nav-container {
@@ -34,6 +49,55 @@ body > header .nav-container {
     max-width: 1400px !important;
     margin: 0 auto !important;
 }
+
+/* Nav Actions Container */
+body > header .nav-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 1rem !important;
+}
+
+/* Theme Toggle Button */
+body > header .theme-toggle {
+    background: transparent !important;
+    border: 2px solid var(--primary-color) !important;
+    border-radius: 50% !important;
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: all var(--transition-speed) ease !important;
+    color: var(--primary-color) !important;
+    font-size: 1.2rem !important;
+    padding: 0 !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+body > header .theme-toggle:hover {
+    background: var(--primary-color) !important;
+    color: var(--text-bright) !important;
+    transform: scale(1.1) rotate(15deg) !important;
+    box-shadow: 0 4px 12px rgba(66, 133, 244, 0.4) !important;
+}
+
+body > header .theme-toggle:active {
+    transform: scale(0.95) !important;
+}
+
+body > header .theme-toggle .theme-icon {
+    display: inline-block !important;
+    transition: transform var(--transition-speed) ease !important;
+    line-height: 1 !important;
+}
+
+body > header .theme-toggle:hover .theme-icon {
+    transform: rotate(360deg) !important;
+}
+
+/* Theme icon is handled by JavaScript */
 
 /* Logo Styling */
 body > header .logo {
@@ -124,6 +188,7 @@ body > header .menu-button {
     color: var(--primary-color) !important;
     cursor: pointer !important;
     z-index: 1002 !important;
+    padding: 0.5rem !important;
 }
 
 /* Nav Overlay for Mobile */
@@ -163,6 +228,16 @@ body > header .menu-button {
         padding: 1rem !important;
         width: 100% !important; /* Ensure full width */
         justify-content: space-between !important; /* Ensure proper spacing */
+    }
+    
+    body > header .nav-actions {
+        gap: 0.5rem !important;
+    }
+    
+    body > header .theme-toggle {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 1rem !important;
     }
     
     body > header .menu-button {
