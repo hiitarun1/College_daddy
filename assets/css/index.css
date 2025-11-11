@@ -226,31 +226,12 @@ body::before {
 }
 
 .feature-card {
-<<<<<<< HEAD
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 12px;
-    padding: 30px;
-    border: 1px solid rgba(0, 157, 255, 0.3);
-    text-align: center;
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    touch-action: manipulation;
-    position: relative;
-    overflow: hidden;
-    transform-style: preserve-3d;
-    z-index: 1;
-
-    transition: all 0.3s ease;
-    background-color: #000000;
-    border-radius: 10px;
-=======
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 12px;
   padding: 30px;
   border: 1px solid rgba(0, 157, 255, 0.3);
   text-align: center;
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.3s ease;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   touch-action: manipulation;
@@ -260,12 +241,13 @@ body::before {
   z-index: 1;
 }
 
+/* 🌞 Light mode support from upstream */
 [data-theme="light"] .feature-card {
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 102, 204, 0.2);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
->>>>>>> main
 }
+
 
 .feature-card::before {
   content: "";
